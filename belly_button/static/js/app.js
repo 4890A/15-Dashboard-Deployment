@@ -3,7 +3,7 @@ function buildMetadata(sample) {
   // @TODO: Complete the following function that builds the metadata panel
   
   // Use `d3.json` to fetch the metadata for a sample
-  endpoint = "/metadata".concat(sample)
+  endpoint = "/metadata/".concat(sample)
   // Use d3 to select the panel with id of `#sample-metadata`
   d3.json(endpoint).then(data => {
     panelBody  = d3.select("#sample-metadata")
@@ -21,7 +21,7 @@ function buildMetadata(sample) {
 
 function buildCharts(sample) {
   // create endpoint url
-  endpoint = "/samples".concat(sample)
+  endpoint = "/samples/".concat(sample)
   // create promise
   d3.json(endpoint).then(data => {
     // zip the response arrays into a single object to sort/filter on
