@@ -12,6 +12,7 @@ from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.url_map.strict_slashes = False
 
 
 #################################################
@@ -37,7 +38,7 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/names")
+@app.route("/names/")
 def names():
     """Return a list of sample names."""
 
